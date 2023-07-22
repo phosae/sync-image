@@ -25,4 +25,3 @@ jobs:
         destination-credentials: zengxu:${{ secrets.DOCKERHUB_TOKEN }}
         versions: |
           v1.30.4
-          latest
