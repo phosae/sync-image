@@ -18,4 +18,4 @@ jobs:
         destination-credentials: myrepo:${{ secrets.DOCKERHUB_TOKEN }}
 ```
 
-more options at [titenkov/docker-sync-action]: https://github.com/titenkov/docker-sync-action
+more options at [titenkov/docker-sync-action](https://github.com/titenkov/docker-sync-action)
