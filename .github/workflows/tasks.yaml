@@ -15,7 +15,7 @@ jobs:
       uses: titenkov/docker-sync-action@v1
       with:
         source: ghcr.io/k8snetworkplumbingwg/multus-cni
-        destination: docker.io/zengxu/multus-cni
+        destination: zengxu
         destination-credentials: zengxu:${{ secrets.DOCKERHUB_TOKEN }}
     - name: sync calico operator
       uses: titenkov/docker-sync-action@v1
@@ -23,3 +23,6 @@ jobs:
         source: quay.io/tigera/operator
         destination: docker.io/zengxu/tigera-operator
         destination-credentials: zengxu:${{ secrets.DOCKERHUB_TOKEN }}
+        versions: |
+          v1.30.4
+          latest
