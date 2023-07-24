@@ -17,11 +17,10 @@ jobs:
         source: ghcr.io/k8snetworkplumbingwg/multus-cni
         destination: zengxu
         destination-credentials: zengxu:${{ secrets.DOCKERHUB_TOKEN }}
-    - name: sync calico operator
-      uses: titenkov/docker-sync-action@v1
+    - name: sync calico operator # titenkov/docker-sync-action is suitable for a whole repo, but sometimes not for single tag
+      uses: onichandame/docker-registry-sync-action@master
       with:
-        source: quay.io/tigera/operator
-        destination: docker.io/zengxu/tigera-operator
-        destination-credentials: zengxu:${{ secrets.DOCKERHUB_TOKEN }}
-        versions: |
-          v1.30.4
+        source_repository: quay.io/tigera/operator:v1.30.4
+        target_repository: docker.io/zengxu/tigera-operator:v1.30.4
+        target_username: zengxu
+        target_password: ${{ secrets.DOCKERHUB_TOKEN }}
