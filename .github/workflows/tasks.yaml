@@ -17,6 +17,12 @@ jobs:
         source: ghcr.io/k8snetworkplumbingwg/multus-cni
         destination: zengxu
         destination-credentials: zengxu:${{ secrets.DOCKERHUB_TOKEN }}
+    - name: sync cilium
+      uses: titenkov/docker-sync-action@v1
+      with:
+        source: quay.io/cilium/cilium
+        destination: zengxu
+        destination-credentials: zengxu:${{ secrets.DOCKERHUB_TOKEN }}
     - name: sync calico operator # titenkov/docker-sync-action is suitable for a whole repo, but sometimes not for single tag
       uses: onichandame/docker-registry-sync-action@master
       with:
