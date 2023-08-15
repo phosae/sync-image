@@ -23,7 +23,7 @@ jobs:
         source: ghcr.io/acorn-io/acorn
         destination: zengxu
         destination-credentials: zengxu:${{ secrets.DOCKERHUB_TOKEN }}
-        version: |
+        versions: |
           0.7.1
     - name: sync calico operator # titenkov/docker-sync-action is suitable for a whole repo, but sometimes not for single tag
       uses: onichandame/docker-registry-sync-action@master
